@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            background-color: aliceblue;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+
+        }
+        .heart {
+            font-size: 5rem;
+            animation: heart .5s infinite alternate 
+            linear;
+        }
+        @keyframes heart {
+            from {
+                transform: scale(.7);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .textheart{
+            font-size: 2rem;
+            animation: textheart .5s infinite alternate linear;
+        }
+        @keyframes textheart {
+            from {
+                transform: scale(.7);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body style="text-align: center; align-items: center; margin: auto;">
+    <div class="textheart">
+        <img src="CalImg.png" alt="" width="250">
+    </div>
+    <div class="heart">🧮</div>
+    <br><br>
+    <input type="number" name="first" id="first" title="First Number" style="text-align: center; padding: 40px; font-size: 20px;">
+    <input type="text" name="sign" id="sign" title="Symbols" style="text-align: center; padding: 40px; font-size: 20px">
+    <input type="number" name="second" id="second" title="Second Number" style="text-align: center; padding: 40px; font-size: 20px">
+
+    <br><br>
+    <button onclick="calculate()" style="font-size: 50px;">Calculate</button>
+    <br><br>
+    <input type="number" id="res" readonly style="text-align: center; padding: 40px; font-size: 20px;">
+    <br>
+    <h1 id="out" style="background-color: red;border: 5px solid blue; display: inline-block; "></h1>
+
+</body>
+<script type="text/javascript">
+    function calculate(){
+        var first = document.getElementById("first").value;
+        var sign = document.getElementById('sign').value;
+        var second = document.getElementById('second').value;
+
+        if (sign == '+'){
+            var result = parseInt(first) + parseInt(second);
+        }
+        if (sign == '-'){
+            var result = parseInt(first) - parseInt(second);
+        }
+        if (sign == '*'){
+            var result = parseInt(first) * parseInt(second);
+        }
+        if (sign == '/'){
+            var result = parseInt(first) / parseInt(second);
+        }
+        document.getElementById('res').value = result;
+        document.getElementById('out').innerHTML = first + sign + second + " = " + result;
+    }
+</script>
+</html>
