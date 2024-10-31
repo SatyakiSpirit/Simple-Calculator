@@ -44,7 +44,12 @@
     <div class="heart">🧮</div>
     <br><br>
     <input type="number" name="first" id="first" title="First Number" style="text-align: center; padding: 40px; font-size: 20px;">
-    <input type="text" name="sign" id="sign" title="Symbols" style="text-align: center; padding: 40px; font-size: 20px">
+    <select name="" id="ope" style="text-align: center; padding: 40px; font-size: 20px;">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+    </select>
     <input type="number" name="second" id="second" title="Second Number" style="text-align: center; padding: 40px; font-size: 20px">
 
     <br><br>
@@ -58,7 +63,7 @@
 <script type="text/javascript">
     function calculate(){
         var first = document.getElementById("first").value;
-        var sign = document.getElementById('sign').value;
+        var sign = document.getElementById('ope').value;
         var second = document.getElementById('second').value;
 
         if (sign == '+'){
